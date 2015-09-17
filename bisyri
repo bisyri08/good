@@ -1,0 +1,80 @@
+module One where
+
+import Data.List
+
+fst' (a, b) = a
+
+snd' (a, b) = b
+
+null' x
+  | x == [] = True
+  | otherwise = False
+
+max' a b
+  | a > b = a
+  | a < b = b
+
+min' a b
+  | a < b = a
+  | a > b = b
+
+drop' _ [] = []
+
+drop' 0 sw = sw
+
+drop' n (s:sw) = drop' (n-1) sw
+
+square x = x*x
+
+product' [a, b] = a * b
+
+head' :: [a] -> a
+head' (x:xs) = x
+
+sum' [x, xs] = x + xs
+sum' [] = 0
+
+tail' [0] = []
+tail' (x:xs) = xs
+
+take' 0 (x:xs) = []
+take' _ [] = []
+take' a (x:xs) = x : take' (a-1) xs
+
+reverse' [] = []
+reverse' (x:xs) = reverse' xs ++ [x]
+
+length' [] = 0
+length' (x:xs) = 1 + length' xs
+
+
+delete' _ [] = []
+delete' a (x:xs)
+  | a == x = xs
+  | otherwise = delete' a xs
+
+
+
+-- reverse [1,2,3,4,5] = [5,4,3,2,1]
+
+-- take 2 [1,2,3,4,5] = 1
+-- take 1 [2,3,4,5] = 2
+-- 2 + 3 = 5 , [2] ++ [3] = [2,3], 2 : [2] = [2,2]
+--replicate' n x = n [x]
+
+-- notElem, reverse, last, init, concat, and, or, zip3, sum, product
+
+--abu = 1234
+
+--fone a b = 2*a - b
+-- fst, snd, null, head, tail, take, drop, length, max, min,
+
+-- gaya m a = m * a
+
+-- tekanan f a = f / a
+-- pythagoras x = x * x * x
+
+--isgede x
+--  | x > 1000000 = "GEDE"
+--  | 1000 <= x && x <= 1000000 = "yeah mayan"
+--  | otherwise = "kecill"
